@@ -2,7 +2,6 @@ import { createClient } from "contentful";
 import ArticleCard from "./components/custom/websiteCard";
 import React from "react";
 
-// Define the type for the Contentful response
 interface Website {
   sys: {
     id: string;
