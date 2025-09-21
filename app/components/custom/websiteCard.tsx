@@ -19,7 +19,7 @@ export default function WebsiteCard({ websites }: { websites: any }) {
 
   return (
     <Link href={url} passHref className="h-full">
-      <div className="gradient-border p-10 text-[#007983] hover:scale-105 shadow-lg transition-all duration-200 h-full">
+      <div className="gradient-border p-10 text-[#007983] hover:scale-105 shadow-lg transition-all duration-200 h-full bg-white">
         <div className="flex justify-center items-center p-5">
           <Image
             src={"https:" + display.fields.file.url}
@@ -36,7 +36,7 @@ export default function WebsiteCard({ websites }: { websites: any }) {
           {description && description.length > 100 && (
             <button
               onClick={(e) => {
-                e.preventDefault(); 
+                e.preventDefault();
                 toggleDescription();
               }}
               className="text-blue-400 hover:underline mt-2"

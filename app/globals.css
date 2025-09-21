@@ -28,7 +28,7 @@ body {
 .gradient-border {
   position: relative;
 
-  border-radius: 2rem;
+  border-radius: 1.5rem;
   overflow: hidden;
 }
 
@@ -39,13 +39,10 @@ body {
   padding: 5px; /* border thickness */
   border-radius: inherit;
   background: linear-gradient(to bottom, #67e8f9, #a5f3fc, #f8fafc);
-  -webkit-mask: 
-
-    linear-gradient(#fff 0 0) content-box, 
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
-          mask-composite: exclude;
+  mask-composite: exclude;
   pointer-events: none;
-
 }
-
