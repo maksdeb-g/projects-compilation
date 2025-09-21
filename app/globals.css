@@ -46,3 +46,8 @@ body {
   mask-composite: exclude;
   pointer-events: none;
 }
+
+.gradient-border:hover {
+  background: linear-gradient(to bottom, #f8fafc80, #a5f3fc80, #67e8f980);
+}
+
