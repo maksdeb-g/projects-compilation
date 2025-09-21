@@ -4,7 +4,22 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function WebsiteCard({ websites }: { websites: any }) {
+interface Website {
+  fields: {
+    title: string;
+    description: string;
+    url: string;
+    display: {
+      fields: {
+        file: {
+          url: string;
+        };
+      };
+    };
+  };
+}
+
+export default function WebsiteCard({ websites }: { websites: Website }) {
   const { title, description, url, display } = websites.fields;
   const [showFullDescription, setShowFullDescription] = useState(false);
 
@@ -25,11 +40,11 @@ export default function WebsiteCard({ websites }: { websites: any }) {
             src={"https:" + display.fields.file.url}
             width={540}
             height={300}
-            alt={""}
+            alt={title}
           />
         </div>
         <div className="min-h-16 p-5">
-          <h2 className="text-xl font-semibold mb-2 ">{title}</h2>
+          <h2 className="text-xl font-semibold mb-2">{title}</h2>
           <p className="text-gray-800">
             {showFullDescription ? description : truncatedDescription}
           </p>

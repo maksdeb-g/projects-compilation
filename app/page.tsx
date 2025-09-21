@@ -2,15 +2,39 @@ import { createClient } from "contentful";
 import ArticleCard from "./components/custom/websiteCard";
 import React from "react";
 
-async function getWebsites() {
+// Define the type for the Contentful response
+interface Website {
+  sys: {
+    id: string;
+  };
+  fields: {
+    title: string;
+    description: string;
+    url: string;
+    display: {
+      fields: {
+        file: {
+          url: string;
+        };
+      };
+    };
+  };
+  contentTypeId: string; // Added to satisfy EntrySkeletonType constraint
+}
+
+async function getWebsites(): Promise<Website[]> {
   const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID || "",
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || "",
   });
-  const res = await client.getEntries({
+  const res = await client.getEntries<Website>({
     content_type: "websites",
   });
-  return res.items;
+  return res.items.map((item) => ({
+    sys: item.sys,
+    fields: item.fields,
+    contentTypeId: item.sys.contentType.sys.id,
+  }));
 }
 
 export default async function Home() {
@@ -23,8 +47,8 @@ export default async function Home() {
           Past Projects
         </h1>
         <div className="grid md:grid-cols-2 gap-4 min-h-96">
-          {websites.map((article: any) => (
-            <ArticleCard key={article.sys.id} websites={article} />
+          {websites.map((website) => (
+            <ArticleCard key={website.sys.id} websites={website} />
           ))}
         </div>
       </div>
