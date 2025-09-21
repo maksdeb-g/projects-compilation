@@ -18,8 +18,8 @@ export default function WebsiteCard({ websites }: { websites: any }) {
       : description;
 
   return (
-    <Link href={url} passHref>
-      <div className="gradient-border border-4 p-4 text-[#007983] transition-colors hover:scale-102 min-h-80 max-h-96">
+    <Link href={url} passHref className="h-full">
+      <div className="gradient-border p-10 text-[#007983] hover:scale-105 shadow-lg transition-all duration-200 h-full">
         <div className="flex justify-center items-center p-5">
           <Image
             src={"https:" + display.fields.file.url}

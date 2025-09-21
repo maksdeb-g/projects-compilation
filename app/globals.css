@@ -26,8 +26,26 @@ body {
 }
 
 .gradient-border {
-  border-width: 4px; 
-  border-radius: 50%;
-  border-style: solid;
-  border-image: linear-gradient(to bottom, #67e8f9, #a5f3fc, #f8fafc) 1;
+  position: relative;
+
+  border-radius: 2rem;
+  overflow: hidden;
 }
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 5px; /* border thickness */
+  border-radius: inherit;
+  background: linear-gradient(to bottom, #67e8f9, #a5f3fc, #f8fafc);
+  -webkit-mask: 
+
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+
+}
+
