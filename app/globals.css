@@ -24,3 +24,10 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.gradient-border {
+  border-width: 4px; 
+  border-radius: 50%;
+  border-style: solid;
+  border-image: linear-gradient(to bottom, #67e8f9, #a5f3fc, #f8fafc) 1;
+}
