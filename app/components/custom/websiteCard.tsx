@@ -19,8 +19,8 @@ export default function WebsiteCard({ websites }: { websites: any }) {
 
   return (
     <Link href={url} passHref className="h-full">
-      <div className="gradient-border p-10 text-[#007983] hover:scale-105 shadow-lg transition-all duration-200 h-full bg-white">
-        <div className="flex justify-center items-center p-5">
+      <div className="gradient-border p-1 text-[#007983] hover:scale-105 shadow-lg transition-all duration-200 h-full bg-white">
+        <div className="flex justify-center items-center">
           <Image
             src={"https:" + display.fields.file.url}
             width={540}
@@ -28,7 +28,7 @@ export default function WebsiteCard({ websites }: { websites: any }) {
             alt={""}
           />
         </div>
-        <div className="min-h-16">
+        <div className="min-h-16 p-5">
           <h2 className="text-xl font-semibold mb-2 ">{title}</h2>
           <p className="text-gray-800">
             {showFullDescription ? description : truncatedDescription}
