@@ -19,7 +19,7 @@ interface Website {
       };
     };
   };
-  contentTypeId: string; // Added to satisfy EntrySkeletonType constraint
+  contentTypeId: string;
 }
 
 async function getWebsites(): Promise<Website[]> {
