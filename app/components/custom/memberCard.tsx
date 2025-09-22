@@ -11,12 +11,12 @@ export default function MemberCard({ member }: { member: Member }) {
 
   return (
     <div
-      className="flex flex-col overflow-visible justify-end h-[250px] w-[175px] gradient-border p-1 text-[#007983] hover:scale-105 shadow-lg transition-all duration-200 bg-cover bg-center"
+      className="flex flex-col justify-end items-center h-[250px] w-[175px] gradient-border text-[#007983] hover:scale-105 shadow-lg transition-all duration-200"
     >
-      <img className="w-[90%] z-10" src={image}></img>
-      <div className="p-2 text-center bg-white/70 rounded-md">
-        <h2 className="text-xl font-semibold">{name}</h2>
-        <p className="text-sm">{title}</p>
+      <img className="h-[95%] max-w-[120%] absolute rounded-[1.5rem] pl-2 pr-2 aspect-auto" src={image}></img>
+      <div className="w-full flex flex-row justify-between p-3 rounded-[1.5rem] z-10 text-white gap-[10%] bg-black/50">
+        <h2 className="text-2xl font-semibold text-shadow-xs text-shadow-white text-start">{name}</h2>
+        <p className="text-xs text-end text-wrap">{title}</p>
       </div>
     </div>
   );
