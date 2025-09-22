@@ -54,7 +54,7 @@ export default function WebsiteCard({ websites }: { websites: Website }) {
                 e.preventDefault();
                 toggleDescription();
               }}
-              className="text-blue-400 hover:underline mt-2"
+              className=" text-[#007983] hover:underline mt-2"
             >
               {showFullDescription ? "See Less" : "See More"}
             </button>
