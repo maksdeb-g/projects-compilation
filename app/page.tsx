@@ -45,12 +45,13 @@ export default async function Home() {
     { name: "Justin", title: "Frontend Developer", image: "/assets/img/Justin.webp" },
     { name: "Max", title: "Frontend Developer", image: "/assets/img/Max.webp" },
     { name: "Deniel", title: "Backend Developer", image: "/assets/img/Deniel.webp" },
+    { name: "Roslyn", title: "UI/UX Designer", image: "/assets/img/Roslyn.webp" },
   ];
 
   return (
     <div className="flex flex-col min-h-screen items-center justify-center bg-gradient-to-b from-cyan-100 to-slate-50 p-8">
       <div className="h-auto">
-        <h1 className="text-2xl md:text-4xl font-bold mb-10 text-center text-[#007983]">
+        <h1 className="text-4xl text-wrap font-bold p-5 text-center text-[#007983]">
           Meet the Team!
         </h1>
         <div className="max-w-3xl flex flex-row gap-4 p-10 flex-wrap justify-center overflow-visible">
@@ -60,7 +61,7 @@ export default async function Home() {
         </div>
       </div>
       <div className="max-w-3xl mx-auto">
-        <h1 className="text-2xl md:text-4xl font-bold mb-10 text-center text-[#007983]">
+        <h1 className="text-4xl text-wrap font-bold p-5 text-center text-[#007983]">
           Live Projects
         </h1>
         <div className="grid md:grid-cols-2 gap-4 min-h-96 p-10">
@@ -70,13 +71,10 @@ export default async function Home() {
         </div>
       </div>
       <div className="max-w-3xl mx-auto">
-        <h1 className="text-2xl md:text-4xl font-bold mb-10 text-center text-[#007983]">
+        <h1 className="text-4xl text-wrap font-bold p-5 text-center text-[#007983]">
           Past Projects
         </h1>
         <div className="grid md:grid-cols-2 gap-4 min-h-96 p-10">
-          {websites.map((website) => (
-            <ArticleCard key={website.sys.id} websites={website} />
-          ))}
         </div>
       </div>
     </div>
