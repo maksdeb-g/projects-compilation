@@ -21,7 +21,7 @@ export default function WebsiteCard({ websites }: { websites: Website }) {
 
   return (
     <Link href={url} target="_blank" passHref className="h-full lg:w-96">
-      <div className="gradient-border p-1 text-[#007983] hover:scale-105 shadow-lg transition-all duration-200 h-full bg-white">
+      <div className="flex flex-col gradient-border p-1 text-[#007983] hover:scale-105 shadow-lg transition-all duration-200 h-full bg-white">
         <div className="flex justify-center items-center">
           <Image
             src={"https:" + display.fields.file.url}
@@ -47,11 +47,11 @@ export default function WebsiteCard({ websites }: { websites: Website }) {
             </button>
           )}
         </div>
-        <div className="flex gap-2 justify-center py-4 text-center items-center">
+        <div className="flex flex-grow gap-2 justify-end p-4 text-center items-end">
           {websites.fields.developers.map((dev: string, i: number) => (
             <span
               key={`${websites.sys.id}-${i}`}
-              className="px-4 py-2 border-[1px] border-[#007983] rounded-3xl"
+              className="px-4 py-2 border-[1px] border-[#007983] rounded-3xl h-[fit-content]"
             >
               {dev}
             </span>
