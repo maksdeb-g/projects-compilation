@@ -30,6 +30,6 @@ export default async function Projects() {
           <WebsiteCard key={website.sys.id} websites={website} />
         ))}
       </div>
-    </div> 
+    </div>
   );
 }
