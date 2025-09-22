@@ -21,7 +21,7 @@ export default async function Projects() {
   const websites = await getWebsites();
 
   return (
-    <div className="h-auto max-w-5xl mx-auto">
+    <div className="h-auto mx-auto">
       <h1 className="text-4xl text-wrap font-bold p-5 text-center text-[#007983]">
         Live Projects
       </h1>
