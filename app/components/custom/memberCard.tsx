@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+
 
 interface Member {
   name: string;
