@@ -22,8 +22,8 @@ export default async function Projects() {
 
   return (
     <div className="mx-auto">
-      <h1 className="text-4xl text-wrap font-bold p-5 text-center text-[#007983]">
-        Live Projects
+      <h1 className="text-4xl text-wrap font-bold p-5 text-center text-[#007983] font-[Outfit]">
+        Explore our Work
       </h1>
       <div className="max-w-80 md:max-w-[120%] grid md:grid-cols-2 xl:grid-cols-3 gap-4 min-h-96 p-10 overflow-visible justify-center">
         {websites.map((website) => (
