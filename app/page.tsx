@@ -40,12 +40,28 @@ async function getWebsites(): Promise<Website[]> {
 export default async function Home() {
   const websites = await getWebsites();
   const members = [
-    { name: "Trixie", title: "Backend Developer", image: "/assets/img/Trixie.webp" },
+    {
+      name: "Trixie",
+      title: "Backend Developer",
+      image: "/assets/img/Trixie.webp",
+    },
     { name: "Errol", title: "UI/UX Designer", image: "/assets/img/Errol.webp" },
-    { name: "Justin", title: "Frontend Developer", image: "/assets/img/Justin.webp" },
+    {
+      name: "Justin",
+      title: "Frontend Developer",
+      image: "/assets/img/Justin.webp",
+    },
     { name: "Max", title: "Frontend Developer", image: "/assets/img/Max.webp" },
-    { name: "Deniel", title: "Backend Developer", image: "/assets/img/Deniel.webp" },
-    { name: "Roslyn", title: "UI/UX Designer", image: "/assets/img/Roslyn.webp" },
+    {
+      name: "Deniel",
+      title: "Backend Developer",
+      image: "/assets/img/Deniel.webp",
+    },
+    {
+      name: "Roslyn",
+      title: "UI/UX Designer",
+      image: "/assets/img/Roslyn.webp",
+    },
   ];
 
   return (
@@ -74,8 +90,7 @@ export default async function Home() {
         <h1 className="text-4xl text-wrap font-bold p-5 text-center text-[#007983]">
           Past Projects
         </h1>
-        <div className="grid md:grid-cols-2 gap-4 min-h-96 p-10">
-        </div>
+        <div className="grid md:grid-cols-2 gap-4 min-h-96 p-10"></div>
       </div>
     </div>
   );
