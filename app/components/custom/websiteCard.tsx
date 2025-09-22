@@ -6,7 +6,7 @@ import Image from "next/image";
 import type { Website } from "@/app/types";
 
 export default function WebsiteCard({ websites }: { websites: Website }) {
-  const { title, description, url, display, developers } = websites.fields;
+  const { title, description, url, display } = websites.fields;
   const [showFullDescription, setShowFullDescription] = useState(false);
   console.log(websites);
 
@@ -48,8 +48,13 @@ export default function WebsiteCard({ websites }: { websites: Website }) {
           )}
         </div>
         <div className="flex gap-2 justify-center py-4 text-center items-center">
-          {websites.fields.developers.map((dev:string, i:number) => (
-            <span key={`${websites.sys.id}-${i}`} className="px-4 py-2 border-[1px] border-[#007983] rounded-3xl">{dev}</span>
+          {websites.fields.developers.map((dev: string, i: number) => (
+            <span
+              key={`${websites.sys.id}-${i}`}
+              className="px-4 py-2 border-[1px] border-[#007983] rounded-3xl"
+            >
+              {dev}
+            </span>
           ))}
         </div>
       </div>
