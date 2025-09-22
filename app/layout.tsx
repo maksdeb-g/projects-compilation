@@ -3,7 +3,7 @@ import "./globals.css";
 export const metadata = {
   title: "Projects Compilation",
   openGraph: {
-    images: ["/public/assets/img/landing.png"],
+    images: ["/assets/img/landing.png"],
   },
 };
 
