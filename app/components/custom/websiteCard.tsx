@@ -47,7 +47,7 @@ export default function WebsiteCard({ websites }: { websites: Website }) {
             </button>
           )}
         </div>
-        <div className="flex flex-grow gap-2 justify-end p-4 text-center items-end">
+        <div className="flex flex-grow flex-wrap gap-2 justify-end p-4 text-center items-end">
           {websites.fields.developers.map((dev: string, i: number) => (
             <span
               key={`${websites.sys.id}-${i}`}
