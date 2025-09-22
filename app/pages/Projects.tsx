@@ -1,39 +1,21 @@
 import WebsiteCard from "../components/custom/websiteCard";
 import { createClient } from "contentful";
-
-interface Website {
-  sys: {
-    id: string;
-  };
-  fields: {
-    title: string;
-    description: string;
-    url: string;
-    display: {
-      fields: {
-        file: {
-          url: string;
-        };
-      };
-    };
-  };
-  contentTypeId: string;
-}
-
-async function getWebsites(): Promise<Website[]> {
-  const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID || "",
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || "",
-  });
-  const res = await client.getEntries<Website>({
-    content_type: "websites",
-  });
-  return res.items.map((item) => ({
-    sys: item.sys,
-    fields: item.fields,
-    contentTypeId: item.sys.contentType.sys.id,
-  }));
-}
+import type { Website } from "../types";
+  
+  async function getWebsites(): Promise<Website[]> {
+    const client = createClient({
+      space: process.env.CONTENTFUL_SPACE_ID || "",
+      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || "",
+    });
+    const res = await client.getEntries<Website>({
+      content_type: "websites",
+    });
+    return res.items.map((item) => ({
+      sys: item.sys,
+      fields: item.fields,
+      contentTypeId: item.sys.contentType.sys.id,
+    }));
+  }
 
 export default async function Projects() {
   const websites = await getWebsites();

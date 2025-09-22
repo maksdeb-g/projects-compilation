@@ -3,25 +3,12 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-
-interface Website {
-  fields: {
-    title: string;
-    description: string;
-    url: string;
-    display: {
-      fields: {
-        file: {
-          url: string;
-        };
-      };
-    };
-  };
-}
+import type { Website } from "@/app/types";
 
 export default function WebsiteCard({ websites }: { websites: Website }) {
-  const { title, description, url, display } = websites.fields;
+  const { title, description, url, display, developers } = websites.fields;
   const [showFullDescription, setShowFullDescription] = useState(false);
+  console.log(websites);
 
   const toggleDescription = () => {
     setShowFullDescription((prev) => !prev);
@@ -59,6 +46,11 @@ export default function WebsiteCard({ websites }: { websites: Website }) {
               {showFullDescription ? "See Less" : "See More"}
             </button>
           )}
+        </div>
+        <div className="flex gap-2 justify-center py-4 text-center items-center">
+          {websites.fields.developers.map((dev:string, i:number) => (
+            <span key={`${websites.sys.id}-${i}`} className="px-4 py-2 border-[1px] border-[#007983] rounded-3xl">{dev}</span>
+          ))}
         </div>
       </div>
     </Link>
