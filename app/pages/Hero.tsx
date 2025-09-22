@@ -27,7 +27,7 @@ export default function Hero() {
   ];
   return (
     <div className="h-full p-10">
-      <h1 className="text-4xl text-wrap font-bold p-5 text-center text-[#007983]">
+      <h1 className="text-4xl text-wrap font-bold p-5 text-center text-[#007983] font-[Outfit]">
         Meet the Team!
       </h1>
       <div className="max-w-3xl flex flex-row gap-4 p-10 flex-wrap justify-center overflow-visible">
